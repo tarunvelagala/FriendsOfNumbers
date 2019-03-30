@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row clearfix" style="padding-top: 25px;">
+        <div class="col col-md-6">
+            <div class="row clearfix">
+                <div class="col col-md-6">
+                    <canvas id="sheet" width="400" height="400"></canvas>
+                    <div style="padding-top: 40px;">
+                        <button class="btn btn-outline-danger" type="button"
+                                style="margin-right: 40px;margin-left: 60px;" onclick="clearCanvas()">Clear
+                        </button>
+                        <button class="btn btn-outline-primary" id="recognize"  onclick="processImg()" type="button">Predict</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h2>Predicted Result</h2>
+            <h1 id="rec_result"></h1>
+        </div>
+    </div>
+{% endblock %}
