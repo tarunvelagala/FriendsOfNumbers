@@ -15,7 +15,6 @@ model, graph = init()
 @app.route('/')
 @app.route('/home', methods=['POST'])
 def hello_world():
-<<<<<<< HEAD
     return render_template('index.html')
 
 
@@ -39,9 +38,6 @@ def process():
         print(np.argmax(out, axis=1))
         response = np.argmax(out, axis=1)
         return str(response[0])
-=======
-    return 'Hello World Tarun!'
->>>>>>> db3fcfc4f9a49013fc4434d5a9a60a66c7d30ef3
 
 
 if __name__ == '__main__':
