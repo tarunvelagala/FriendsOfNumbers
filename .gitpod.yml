@@ -1,0 +1,3 @@
+image: Tarun's Image
+ports:
+- port: 3000
