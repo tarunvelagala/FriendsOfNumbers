@@ -51,8 +51,8 @@ function
 mousedown(event) {
     drawing = true;
     let location = getPosition(event);
-    context.lineWidth = 15.0;
-    context.strokeStyle = "#000000";
+    context.lineWidth = 20.0;
+    context.strokeStyle = "#ffffff";
     context.beginPath();
     context.moveTo(location.x, location.y);
 }
@@ -78,7 +78,7 @@ mouseup(event) {
 
 function draw() {
 
-    context.fillStyle = '#ffffff';
+    context.fillStyle = 'black';
     context.fillRect(0, 0, 400, 400);
 
 }

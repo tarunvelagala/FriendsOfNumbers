@@ -19,7 +19,7 @@ def init():
     model.add(Dropout(0.5))
     model.add(Dense(num_classes, activation='softmax'))
 
-    # load woeights into new model
+    # load weights into new model
     model.load_weights("model/weights.h5")
     print("Loaded Model from disk")
 
