@@ -29,9 +29,9 @@ def process():
     img_data = request.get_data()
     convertImage(img_data)
     x = imread('output.png', mode='L')
-    # x = np.invert(x)
+    x = np.invert(x)
     x = imresize(x, (28, 28))
-    x = x.reshape(1, 28, 28, 1)
+    x = x.reshape(1, 1, 28, 28)
     with graph.as_default():
         out = model.predict(x)
         print(out)

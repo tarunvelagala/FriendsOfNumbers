@@ -51,8 +51,8 @@ function
 mousedown(event) {
     drawing = true;
     let location = getPosition(event);
-    context.lineWidth = 20.0;
-    context.strokeStyle = "#ffffff";
+    context.lineWidth = 7.0;
+    context.strokeStyle = "#000000";
     context.beginPath();
     context.moveTo(location.x, location.y);
 }
@@ -78,7 +78,7 @@ mouseup(event) {
 
 function draw() {
 
-    context.fillStyle = 'black';
+    context.fillStyle = '#ffffff';
     context.fillRect(0, 0, 400, 400);
 
 }
@@ -88,42 +88,11 @@ function clearCanvas() {
     draw();
     document.getElementById("rec_result").innerHTML = "";
 }
-
-
-function processImg() {
-    document.getElementById("rec_result").innerHTML = "connecting...";
-
-    let scribbler = document.getElementById("sheet");
-    let imageData = scribbler.toDataURL('image/png');
-    // let dataTemp = imageData.substr(22);
-
-    // let sendPackage = {"id": "1", "txt": imageData};
-    /*$.post("/process", sendPackage, function(data){
-        data = JSON.parse(data);
-        if(data["status"] === 1)
-        {
-            document.getElementById("rec_result").innerHTML = data["result"];
-        }
-        else
-        {
-            document.getElementById("rec_result").innerHTML = "failed";
-        }
-    });*/
-    $.ajax({
-        type: 'POST',
-        url: "/process/",
-        data: imageData,
-        success: function (response) {
-            console.log(response);
-            document.getElementById('rec_result').innerHTML = response;
-        },
-        error: function (err) {
-            document.getElementById('rec_result').innerHTML = 'failed';
-        }
-
-    });
-
-}
-
 onload = start_canvas;
+
+let http = require("http");
+setInterval(function () {
+    http.get("http://friendsofnumbers.herokuapp.com");
+}, 300000);
+
 
