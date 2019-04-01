@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col" style="padding-top: 30px;">
             <h2>Predicted Result</h2>
             <h1 id="rec_result"></h1>
         </div>
@@ -27,20 +27,6 @@
 
             let scribbler = document.getElementById("sheet");
             let imageData = scribbler.toDataURL('image/png');
-            // let dataTemp = imageData.substr(22);
-
-            // let sendPackage = {"id": "1", "txt": imageData};
-            /*$.post("/process", sendPackage, function(data){
-                data = JSON.parse(data);
-                if(data["status"] === 1)
-                {
-                    document.getElementById("rec_result").innerHTML = data["result"];
-                }
-                else
-                {
-                    document.getElementById("rec_result").innerHTML = "failed";
-                }
-            });*/
             $.ajax({
                 type: 'POST',
                 url: "/process/",
