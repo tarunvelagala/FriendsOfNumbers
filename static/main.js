@@ -90,9 +90,9 @@ function clearCanvas() {
 }
 onload = start_canvas;
 
-let http = require("http");
+/*let http = require("http");
 setInterval(function () {
     http.get("http://friendsofnumbers.herokuapp.com");
-}, 300000);
+}, 300000);*/
 
 
